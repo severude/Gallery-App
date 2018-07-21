@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Container from './components/Container';
 
 class App extends Component {
   render() {
     return (
-      <Container />
+      <BrowserRouter>
+          <Route exact path="/" component={Container} />
+      </BrowserRouter>
     );
   }
 }
