@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Container from './components/Container';
 import NotFound from './components/NotFound';
+import { apiKey, apiSecret } from './config.js';
 
 class App extends Component {
   render() {
