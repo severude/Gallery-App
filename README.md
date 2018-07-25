@@ -11,14 +11,12 @@ In this project, you'll build an image gallery using React and the Flickr API. A
 
 # Setup Instructions
 
-1) Create a config.js file in the root folder.  Paste in the following code inserting your own Flickr API Key and API Secret:
+1) Create a config.js file in the src folder.  Paste in the following code inserting your own Flickr API Key and API Secret:
 
 ```JavaScript
 const apiKey = 'YOUR API KEY';
-const apiSecret = 'YOUR API SECRET';
 
 export default apiKey;
-export default apiSecret;
 
 ```
 
