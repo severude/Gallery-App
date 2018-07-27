@@ -2,10 +2,12 @@ import React from 'react';
 import Header from './Header';
 import Gallery from './Gallery';
 
-const Container = () => (
+const Container = props => (
   <div className="container">
     <Header />
-    <Gallery />
+    { 
+      (props.loading) ? <p>Loading...</p> : <Gallery data={props.data} />
+    }     
   </div>
 );
 

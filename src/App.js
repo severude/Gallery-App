@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      gifs: [],
+      photos: [],
       loading: true
     };
   } 
@@ -23,7 +23,7 @@ class App extends Component {
     axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=12&format=json&nojsoncallback=1`)
       .then(response => {
         this.setState({
-          gifs: response.data.photos.photo,
+          photos: response.data.photos.photo,
           loading: false
         });
       })
@@ -36,7 +36,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Container} />
+          <Route exact path="/" render={(props) => <Container data={this.state.photos} loading={this.state.loading} />} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
