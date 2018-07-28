@@ -4,7 +4,7 @@ import Gallery from './Gallery';
 
 const Container = props => (
   <div className="container">
-    <Header />
+    <Header onSearch={props.onSearch}/>
     { 
       (props.loading) ? <p>Loading...</p> : <Gallery data={props.data} />
     }     

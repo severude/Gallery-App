@@ -36,7 +36,11 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" render={(props) => <Container data={this.state.photos} loading={this.state.loading} />} />
+          <Route exact path="/" render={(props) => 
+            <Container data={this.state.photos}
+                       loading={this.state.loading}
+                       onSearch={this.performSearch} />}
+           />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

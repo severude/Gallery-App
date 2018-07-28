@@ -1,11 +1,11 @@
 import React from 'react';
-import Form from './Form';
+import SearchForm from './SearchForm';
 import Navigation from './Navigation';
 
-const Header = () => (
+const Header = props => (
     <div>
-        <Form />
-        <Navigation />
+        <SearchForm onSearch={props.onSearch}/>
+        <Navigation onSearch={props.onSearch}/>
     </div>
 );
 
