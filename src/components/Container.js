@@ -6,7 +6,7 @@ const Container = props => (
   <div className="container">
     <Header onSearch={props.onSearch}/>
     { 
-      (props.loading) ? <p>Loading...</p> : <Gallery data={props.data} />
+      (props.loading) ? <p>Loading...</p> : <Gallery data={props.data} tag={props.search}/>
     }     
   </div>
 );
