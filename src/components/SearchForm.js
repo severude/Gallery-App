@@ -6,6 +6,7 @@ export default class SearchForm extends Component {
         e.preventDefault();
         this.props.onSearch(this.query.value);
         e.currentTarget.reset();
+        // this.props.history.push(`/search/${this.query.value}`);
     }
     
     render() {

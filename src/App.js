@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
-import Container from './components/Container';
+import Header from './components/Header';
+import Loading from './components/Loading';
 import NotFound from './components/NotFound';
 import apiKey from './config.js';
+import SearchForm from './components/SearchForm';
 
 class App extends Component {
 
@@ -37,15 +39,16 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/" render={(props) => 
-            <Container data={this.state.photos}
-                       loading={this.state.loading}
-                       search={this.state.searchTag}
-                       onSearch={this.performSearch} />}
-           />
-          <Route component={NotFound} />
-        </Switch>
+        <div className="container">
+          <Header onSearch={this.performSearch}/>
+          <Switch>
+            <Route exact path="/" render={() => <Loading loading={this.state.loading} data={this.state.photos} tag={this.state.searchTag} />} />
+            <Route path="/:topic" render={() => <Loading loading={this.state.loading} data={this.state.photos} tag={this.state.searchTag} />} />
+            <Route exact path="/search" component={SearchForm} />
+            <Route path="/search/:topic" component={SearchForm} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
       </BrowserRouter>
     );
   }
