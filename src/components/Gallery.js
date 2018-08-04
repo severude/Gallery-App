@@ -19,9 +19,9 @@ const Gallery = props => {
   return(
     <div className="photo-container">
       <h2>{props.tag}</h2>
-      <ul>
-        { photos }
-      </ul>
+      {
+        (props.loading) ? <p>Loading...</p> : <ul> { photos } </ul>
+      }
     </div>
   );
 }
