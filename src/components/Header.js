@@ -4,7 +4,7 @@ import Navigation from './Navigation';
 
 const Header = props => (
     <div>
-        <SearchForm onSearch={props.onSearch}/>
+        <SearchForm onSearch={props.onSearch} onSubmit={props.onSubmit} />
         <Navigation onSearch={props.onSearch}/>
     </div>
 );
