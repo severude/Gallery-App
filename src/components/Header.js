@@ -1,10 +1,11 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import SearchForm from './SearchForm';
 import Navigation from './Navigation';
 
 const Header = props => (
     <div>
-        <SearchForm onSearch={props.onSearch} onSubmit={props.onSubmit} />
+        <Route path="/search" render={() => <SearchForm onSearch={props.onSearch} />} />
         <Navigation onSearch={props.onSearch}/>
     </div>
 );
