@@ -1,9 +1,10 @@
 import React from 'react';
 import Photo from './Photo';
 import NoPhotos from './NoPhotos';
+import Loading from './Loading';
 
 const Gallery = props => {
-  const photoList = props.data;
+  const photoList = props.photos;
   let photos;
   if(photoList.length) {
     photos = photoList.map(photo => 
@@ -20,7 +21,7 @@ const Gallery = props => {
     <div className="photo-container">
       <h2>{props.tag}</h2>
       {
-        (props.loading) ? <p>Loading...</p> : <ul> { photos } </ul>
+        (props.loading) ? <Loading/> : <ul> { photos } </ul>
       }
     </div>
   );

@@ -41,12 +41,12 @@ class App extends Component {
         <div className="container">
           <Header onSearch={this.performSearch} />
           <Switch>
-            <Route exact path="/" render={() => <Gallery loading={this.state.loading} data={this.state.photos} tag={this.state.searchTag} />} />
-            <Route path="/silly" render={() => <Gallery loading={this.state.loading} data={this.state.photos} tag={this.state.searchTag} />} />
-            <Route path="/surprise" render={() => <Gallery loading={this.state.loading} data={this.state.photos} tag={this.state.searchTag} />} />
-            <Route path="/sunset" render={() => <Gallery loading={this.state.loading} data={this.state.photos} tag={this.state.searchTag} />} />
-            <Route exact path="/search" render={() => <Gallery loading={this.state.loading} data={this.state.photos} tag={this.state.searchTag} />} />
-            <Route path="/search/:topic" render={() => <Gallery loading={this.state.loading} data={this.state.photos} tag={this.state.searchTag} />} />
+            <Route exact path="/" render={() => <Gallery loading={this.state.loading} photos={this.state.photos} tag={this.state.searchTag} />} />
+            <Route path="/silly" render={() => <Gallery loading={this.state.loading} photos={this.state.photos} tag={this.state.searchTag} />} />
+            <Route path="/surprise" render={() => <Gallery loading={this.state.loading} photos={this.state.photos} tag={this.state.searchTag} />} />
+            <Route path="/sunset" render={() => <Gallery loading={this.state.loading} photos={this.state.photos} tag={this.state.searchTag} />} />
+            <Route exact path="/search" render={() => <Gallery loading={this.state.loading} photos={this.state.photos} tag={this.state.searchTag} />} />
+            <Route path="/search/:topic" render={() => <Gallery loading={this.state.loading} photos={this.state.photos} tag={this.state.searchTag} />} />
             <Route component={NotFound} />
           </Switch>
         </div>
