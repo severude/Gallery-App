@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 class SearchForm extends Component {
 
+    // Handles the search form submit
     handleSubmit = e => {
         e.preventDefault();
         this.props.onSearch(this.query.value);
@@ -10,6 +11,7 @@ class SearchForm extends Component {
         e.currentTarget.reset();
     }
     
+    // Renders the search form component
     render() {
         return(
             <form className="search-form" onSubmit={this.handleSubmit} >

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+// Navigation links component for three fixed links and one search link
 const Navigation = (props) => (
     <div className="main-nav">
         <ul>

@@ -8,6 +8,7 @@ import apiKey from './config.js';
 
 class App extends Component {
 
+  // This constructor sets the default state of the App
   constructor() {
     super();
     this.state = {
@@ -16,7 +17,8 @@ class App extends Component {
       searchTag: ""
     };
   } 
-  
+
+  // Changes state of the app to loading and sets the search tag
   setLoading = (query) => {
     this.setState({
       loading: true,
@@ -24,13 +26,15 @@ class App extends Component {
     });
   };
 
+  // Performs default search when the page loads
   componentDidMount() {
     this.performSearch();
   }
-  
+
+  // Makes Flickr API call and responds with photo data
   performSearch = (query = 'trending') => {
     this.setLoading(query);
-    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=12&format=json&nojsoncallback=1`)
+    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=20&format=json&nojsoncallback=1`)
       .then(response => {
         this.setState({
           photos: response.data.photos.photo,
@@ -42,6 +46,7 @@ class App extends Component {
       });    
   }
 
+  // Renders the app component (single page application) based on routing
   render() {
     return (
       <BrowserRouter>

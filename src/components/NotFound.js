@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Route not found component
 const NotFound = () => (
   <div className="not-found">
     <h3>{window.location.href}</h3>
