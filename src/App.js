@@ -12,22 +12,29 @@ class App extends Component {
     super();
     this.state = {
       photos: [],
-      loading: true,
+      loading: false,
       searchTag: ""
     };
   } 
+  
+  setLoading = (query) => {
+    this.setState({
+      loading: true,
+      searchTag: query
+    });
+  };
 
   componentDidMount() {
     this.performSearch();
   }
   
   performSearch = (query = 'trending') => {
+    this.setLoading(query);
     axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=12&format=json&nojsoncallback=1`)
       .then(response => {
         this.setState({
           photos: response.data.photos.photo,
-          loading: false,
-          searchTag: query
+          loading: false
         });
       })
       .catch(error => {
