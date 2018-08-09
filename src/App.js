@@ -57,7 +57,6 @@ class App extends Component {
             <Route path="/silly" render={() => <Gallery loading={this.state.loading} photos={this.state.photos} tag={this.state.searchTag} />} />
             <Route path="/surprise" render={() => <Gallery loading={this.state.loading} photos={this.state.photos} tag={this.state.searchTag} />} />
             <Route path="/sunset" render={() => <Gallery loading={this.state.loading} photos={this.state.photos} tag={this.state.searchTag} />} />
-            <Route exact path="/search" render={() => <Gallery loading={this.state.loading} photos={this.state.photos} tag={this.state.searchTag} />} />
             <Route path="/search/:topic" render={() => <Gallery loading={this.state.loading} photos={this.state.photos} tag={this.state.searchTag} />} />
             <Route component={NotFound} />
           </Switch>
