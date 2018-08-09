@@ -25,3 +25,4 @@ export default apiKey;
 
 ---
 
+Well done! Your React Flickr Gallery project is impressive. Components look good and well reasoned. Routes look good and function well. Nice work fetching and working with data. Final product matches the mockups nicely. And nice work hitting some exceeds here. That's awesome! All in all, exemplary work!
