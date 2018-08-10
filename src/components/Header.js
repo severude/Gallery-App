@@ -5,8 +5,8 @@ import Navigation from './Navigation';
 // Header component which contains the search form and navigation links
 const Header = props => (
     <div>
-        <SearchForm onSearch={props.onSearch}/>
-        <Navigation onSearch={props.onSearch}/>
+        <SearchForm />
+        <Navigation />
     </div>
 );
 
